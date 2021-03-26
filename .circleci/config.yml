@@ -1,19 +1,18 @@
 version: 2
 jobs:
   test_classification_model: 
-    working_directory: ~/project
+    working_directory: ~/project/packages/classification_model
     docker:
       - image: circleci/python:3.8
     steps:
-      - checkout
-      - run:
-        name: Running tests
-        command: |
-        virtualenv venv
-        . venv/bin/activate
-        pip install --upgrade pip
-        pip install -r packages/classification_model/requirements.txt
-        py.test -vv packages/classification_model/tests
+        - checkout:
+          path: ~/project
+        - run:
+            name: Running tests
+            command: |
+              sudo pip install --upgrade pip
+              pip install --user tox
+              tox -e py38
 
 workflows:
   version: 2
