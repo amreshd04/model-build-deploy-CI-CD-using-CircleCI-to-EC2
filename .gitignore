@@ -107,6 +107,6 @@ venv.bak/
 .idea/
 
 # datafiles
-packages/classification_model/classification_model/datasets/*.csv
+#packages/classification_model/classification_model/datasets/*.csv
 packages/classification_model/classification_model/datasets/*.zip
 packages/classification_model/classification_model/datasets/*.txt
