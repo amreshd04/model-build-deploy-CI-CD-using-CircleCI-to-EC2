@@ -7,7 +7,7 @@ from setuptools import find_packages, setup
 
 NAME = 'classification_model'
 DESCRIPTION = 'Train and deploy models'
-URL = 'https://github.com/amreshd04/deploying-machine-learning-models'
+URL = 'https://github.com/amreshd04/model-training-build-deploy'
 EMAIL = 'amreshd04@gmail.com'
 AUTHOR = 'amreshd04'
 REQUIRES_PYTHON = '>=3.8.0'
