@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from classification_model.processing.da import load_pipeline
+from classification_model.processing.data_management import load_pipeline
 from classification_model.config import config
 from classification_model.processing.validation import validate_inputs
 from classification_model import __version__ as _version
