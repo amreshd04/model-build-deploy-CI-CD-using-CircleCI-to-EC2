@@ -33,8 +33,8 @@ def get_logger(*, logger_name):
 	logger = logging.getLogger(logger_name)
 
 	logger.setLevel(logging.INFO)
-	logger.add_handler(get_console_handler())
-	logger.add_handler(get_file_handler())
+	logger.addHandler(get_console_handler())
+	logger.addHandler(get_file_handler())
 	logger.propagate = False
 
 	return logger
