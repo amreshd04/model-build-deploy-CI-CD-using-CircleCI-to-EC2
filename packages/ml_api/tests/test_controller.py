@@ -19,7 +19,7 @@ def test_version_endpoint_returns_version(flask_test_client):
 
 	respnse_data = json.loads(response.data)
 
-	assert response.status_code = 200
+	assert response.status_code == 200
 	assert response_data['model_version'] == version
 	assert response_data['api_version'] == api_version
 
