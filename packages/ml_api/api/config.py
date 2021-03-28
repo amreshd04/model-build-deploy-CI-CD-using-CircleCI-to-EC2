@@ -30,7 +30,7 @@ def get_file_handler():
 
 
 def get_logger(*, logger_name):
-	logger = logging.get_logger(logger_name)
+	logger = logging.getLogger(logger_name)
 
 	logger.setLevel(logging.INFO)
 	logger.add_handler(get_console_handler())
