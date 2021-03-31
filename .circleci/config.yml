@@ -27,10 +27,7 @@ jobs:
             . venv/bin/activate            
             pip install --upgrade pip
             pip install -r packages/ml_api/requirements.txt
-            PYTHONPATH=./packages/classification_model
-            PYTHONPATH=./packages/classification_model/classification_model
-            PYTHONPATH=./packages/classification_model/classification_model/processing
-            PYTHONPATH=./packages/ml_api            
+            PYTHONPATH=.
             py.test -vv packages/ml_api/tests
   train_and_upload_classification_model:
     working_directory: ~/project
