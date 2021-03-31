@@ -4,6 +4,8 @@ flask==1.1.2
 # schema validation
 marshmallow==2.17.0
 
-# local regression_model package
-# update with your local path
--e "C:\Users\Amresh\repos\deploy-ml-model\packages\classification_model"
+# testing requirements
+pytest>=5.3.2,<6.0.0
+
+# Install from gemfury
+classification-model==2.0.20

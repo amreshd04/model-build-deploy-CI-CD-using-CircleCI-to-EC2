@@ -10,13 +10,13 @@ class InvalidInputError(Exception):
 
 
 class InsuranceDataRequestSchema(Schema):
-	Gender = fields.str(allow_none=True)
+	Gender = fields.Str(allow_none=True)
 	Age = fields.Integer()
 	Driving_License = fields.Integer()
 	Region_Code = fields.Float()
 	Previously_Insured = fields.Integer()
-	Vehicle_Age = fields.str()
-	Vehicle_Damage = fields.str()
+	Vehicle_Age = fields.Str()
+	Vehicle_Damage = fields.Str()
 	Annual_Premium = fields.Float()
 	Policy_Sales_Channel = fields.Float()
 	Vintage = fields.Integer()
@@ -36,7 +36,7 @@ def validate_inputs(input_data):
     """Check prediction inputs against schema."""
 
     # set many=True to allow passing in a list
-    schema = HouseDataRequestSchema(strict=True, many=True)
+    schema = InsuranceDataRequestSchema(strict=True, many=True)
 
     errors = None
     try:
