@@ -25,6 +25,7 @@ jobs:
           command: |
             virtualenv venv
             . venv/bin/activate
+            PYTHONPATH=./packages/classification_model
             PYTHONPATH=./packages/classification_model/classification_model
             PYTHONPATH=./packages/ml_api            
             pip install --upgrade pip
