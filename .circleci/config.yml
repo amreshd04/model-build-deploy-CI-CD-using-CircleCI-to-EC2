@@ -23,8 +23,7 @@ jobs:
           name: Install requirements
           command: |
             . venv/bin/activate
-            pip install -r packages/classification_model/requirements.txt
-      - *fetch_data
+            pip install -r packages/classification_model/requirements.txt      
       - run:
           name: Train model
           command: |
@@ -66,8 +65,7 @@ train_and_upload_classification_model:
           name: Install requirements
           command: |
             . venv/bin/activate
-            pip install -r packages/classification_model/requirements.txt
-      - *fetch_data
+            pip install -r packages/classification_model/requirements.txt      
       - run: 
           name: Train model
           command: |
