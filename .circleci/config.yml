@@ -27,6 +27,7 @@ jobs:
             . venv/bin/activate
             PYTHONPATH=./packages/classification_model
             PYTHONPATH=./packages/classification_model/classification_model
+            PYTHONPATH=./packages/classification_model/classification_model/processing
             PYTHONPATH=./packages/ml_api            
             pip install --upgrade pip
             pip install -r packages/ml_api/requirements.txt
