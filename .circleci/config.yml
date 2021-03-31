@@ -56,7 +56,7 @@ jobs:
           paths:
             - "/venv"
 
-train_and_upload_classification_model:
+  train_and_upload_classification_model:
     <<: *defaults
     steps:
       - checkout
