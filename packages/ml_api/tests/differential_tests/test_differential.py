@@ -1,16 +1,16 @@
 import math
 import pytest
 
-from classification_model.config import config as model_config
+from classification_model.config import config as config
 from classification_model.predict import make_prediction
 from classification_model.processing.data_management import load_dataset
-from api import config
+from api import config as api_config
 import pandas as pd
 
 
 @pytest.mark.differential
 def test_model_prediction_differential(*, save_file='test_data_predictions.csv'):
-	previous_model_df = pd.read_csv(f'{config.PACKAGE_ROOT}/{save_file}')
+	previous_model_df = pd.read_csv(f'{api_config.PACKAGE_ROOT}/{save_file}')
 
 	previous_model_predictions = previous_model_df.predictions.values
 
