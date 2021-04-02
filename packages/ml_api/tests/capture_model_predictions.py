@@ -2,8 +2,9 @@ import pandas as pd
 
 from classification_model.predict import make_prediction
 from classification_model.processing.data_management import load_dataset
+from classification_model.config import config
 
-from api import config
+from api import config as api_config
 
 def capture_predictions(*, save_file:str = 'test_data_predictions.csv')	:
 	test_data = load_dataset(file_name='test.csv')
@@ -18,7 +19,7 @@ def capture_predictions(*, save_file:str = 'test_data_predictions.csv')	:
 	predictions_df = pd.DataFrame(predictions)
 
 	predictions_df.to_csv(
-		f'{config.PACKAGE_ROOT.parent}/'
+		f'{api_config.PACKAGE_ROOT.parent}/'
 		f'classification_model/classification_model/datasets/{save_file}')
 
 if __name__ == '__main__':
