@@ -1,10 +1,10 @@
 import math
 import pytest
 
-from classification_model.config import config
+from classification_model.config import config as model_config
 from classification_model.predict import make_prediction
 from classification_model.processing.data_management import load_dataset
-
+from api import config
 
 
 @pytest.mark.differential
@@ -13,7 +13,7 @@ def test_model_prediction_differential(*, save_file='test_data_predictions.csv')
 
 	previous_model_predictions = previous_model_df.predictions.values
 
-	test_data = load_dataset(file_name=config.TESTING_DATA_FILE)
+	test_data = load_dataset(file_name=model_config.TESTING_DATA_FILE)
 	multiple_test_input = test_data[99:200]
 
 	current_result=make_prediction(input_data=multiple_test_input)
