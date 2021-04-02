@@ -78,7 +78,7 @@ jobs:
             chmod +x ./scripts/publish_model.sh
             ./scripts/publish_model.sh ./packages/classification_model/
 
- differential_tests:
+  differential_tests:
     <<: *defaults
     steps:
       - checkout
