@@ -5,6 +5,7 @@ from classification_model.config import config as model_config
 from classification_model.predict import make_prediction
 from classification_model.processing.data_management import load_dataset
 from api import config
+import pandas as pd
 
 
 @pytest.mark.differential
