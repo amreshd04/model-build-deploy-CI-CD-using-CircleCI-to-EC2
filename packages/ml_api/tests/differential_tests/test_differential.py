@@ -14,7 +14,7 @@ def test_model_prediction_differential(*, save_file='test_data_predictions.csv')
 
 	previous_model_predictions = previous_model_df.predictions.values
 
-	test_data = load_dataset(file_name=model_config.TESTING_DATA_FILE)
+	test_data = load_dataset(file_name=config.TESTING_DATA_FILE)
 
 	test_data.drop('id', axis=1, inplace=True)
 	test_data[config.DISCRETE_SET1_FEATURES+config.DISCRETE_SET2_FEATURES+config.DISCRETE_SET3_FEATURES]=test_data[config.DISCRETE_SET1_FEATURES+config.DISCRETE_SET2_FEATURES+config.DISCRETE_SET3_FEATURES].astype(str)
