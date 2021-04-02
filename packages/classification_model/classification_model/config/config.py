@@ -29,6 +29,6 @@ CATEGORICAL_FEATURES = ["Gender", "Vehicle_Age", "Vehicle_Damage"]
 PIPELINE_NAME = "rf_model"
 PIPELINE_SAVE_FILE = f"{PIPELINE_NAME}_output_v"
 
-ACCEPTABLE_MODEL_DIFF = 0.05
+ACCEPTABLE_MODEL_DIFF = 1
 
 
