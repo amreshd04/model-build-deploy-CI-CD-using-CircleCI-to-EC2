@@ -19,7 +19,7 @@ def test_model_prediction_differential(*, save_file='test_data_predictions.csv')
 	current_result=make_prediction(input_data=multiple_test_input)
 	current_model_predictions = current_result.get('predictions')
 
-	assert len(previous_model_predictions) = len(current_model_predictions)
+	assert len(previous_model_predictions) == len(current_model_predictions)
 
 
 	for previous_value, current_value in zip(previous_model_predictions, current_model_predictions):
