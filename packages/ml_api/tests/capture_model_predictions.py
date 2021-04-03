@@ -18,9 +18,7 @@ def capture_predictions(*, save_file:str = 'test_data_predictions.csv')	:
 
 	predictions_df = pd.DataFrame(predictions)
 
-	predictions_df.to_csv(
-		f'{api_config.PACKAGE_ROOT.parent}/'
-		f'classification_model/classification_model/datasets/{save_file}')
+	predictions_df.to_csv(f'{api_config.PACKAGE_ROOT}/{save_file}')
 
 if __name__ == '__main__':
 	capture_predictions()
