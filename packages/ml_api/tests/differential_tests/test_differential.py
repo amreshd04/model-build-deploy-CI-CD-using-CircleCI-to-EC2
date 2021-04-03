@@ -8,8 +8,8 @@ from api import config as api_config
 import pandas as pd
 
 
-@pytest.mark.skip
-#@pytest.mark.differential
+#@pytest.mark.skip
+@pytest.mark.differential
 def test_model_prediction_differential(*, save_file='test_data_predictions.csv'):
 	previous_model_df = pd.read_csv(f'{api_config.PACKAGE_ROOT}/{save_file}')
 

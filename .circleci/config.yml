@@ -49,7 +49,8 @@ jobs:
             . venv/bin/activate
             pip install --upgrade pip
             pip install -r packages/ml_api/requirements.txt
-            PYTHONPATH=./packages/ml_api:./packages/classification_model            
+            PYTHONPATH=./packages/ml_api:./packages/classification_model
+            py.test -vv packages/ml_api/tests -m "not differential"
       - save_cache:
           key: py-deps-{{ checksum "packages/ml_api/requirements.txt" }}
           paths:
@@ -108,7 +109,7 @@ workflows:
             - test_classification_model
             - test_ml_api
             - differential_tests
-          #filters:
-            #branches:
-              #only:
-                #- master
+          filters:
+            branches:
+              only:
+                - master
