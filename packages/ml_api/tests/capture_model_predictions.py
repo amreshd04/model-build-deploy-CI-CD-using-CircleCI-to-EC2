@@ -12,7 +12,7 @@ def capture_predictions(*, save_file:str = 'test_data_predictions.csv')	:
 	test_data.drop('id', axis=1, inplace=True)
 	test_data[config.DISCRETE_SET1_FEATURES+config.DISCRETE_SET2_FEATURES+config.DISCRETE_SET3_FEATURES]=test_data[config.DISCRETE_SET1_FEATURES+config.DISCRETE_SET2_FEATURES+config.DISCRETE_SET3_FEATURES].astype(str)
 
-	multiple_test_json = test_data[99:200]
+	multiple_test_json = test_data[0:200]
 
 	predictions = make_prediction(input_data=multiple_test_json)
 

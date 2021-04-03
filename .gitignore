@@ -115,4 +115,4 @@ packages/classification_model/classification_model/datasets/*.txt
 logs/
 
 # trained models (will be created in CI)
-packages/regression_model/regression_model/trained_models/*.pkl
+packages/classification_model/classification_model/trained_models/*.pkl
