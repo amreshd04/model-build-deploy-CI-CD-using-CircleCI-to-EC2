@@ -111,6 +111,10 @@ venv.bak/
 packages/classification_model/classification_model/datasets/*.zip
 packages/classification_model/classification_model/datasets/*.txt
 
+train.csv
+test.csv
+test_data_predictions.csv
+
 # all logs
 logs/
 
