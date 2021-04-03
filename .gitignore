@@ -119,4 +119,4 @@ test_data_predictions.csv
 logs/
 
 # trained models (will be created in CI)
-packages/classification_model/classification_model/trained_models/*.pkl
+#packages/classification_model/classification_model/trained_models/*.pkl
