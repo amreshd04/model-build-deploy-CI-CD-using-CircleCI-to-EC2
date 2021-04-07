@@ -31,3 +31,25 @@ Sets the new remote:
 Push the changes in your local repository to GitHub.
 
 git push -f origin master
+
+
+##########################################################################################################
+To get latest master locally:
+https://stackoverflow.com/questions/8134105/get-latest-from-git-branch
+
+git fetch origin
+ git checkout master
+ git merge origin/master
+
+ To switch to your branch, just do
+
+ git checkout branch1
+
+###########################################################################################################		
+How do we merge the master branch into the feature branch? Easy:
+
+git checkout feature1
+git merge master
+
+###########################################################################################################
+
