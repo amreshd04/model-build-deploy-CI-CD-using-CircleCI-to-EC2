@@ -1,4 +1,4 @@
-NAME=ml-api
+NAME=model-training-build-deploy
 COMMIT_ID=$(shell git rev-parse HEAD)
 
 build-ml-api-aws:
