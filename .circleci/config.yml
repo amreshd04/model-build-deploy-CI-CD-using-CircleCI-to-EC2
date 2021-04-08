@@ -105,8 +105,7 @@ jobs:
           name: Publishing Docker Image To Aws ECR
           command: |
             sudo pip install awscli
-            eval $(aws ecr get-login --no-include-email --region us-east-2)
-            eval $(aws ecr get-login | sed 's|https://||')
+            eval $(aws ecr get-login --no-include-email --region us-east-2)            
             make build-ml-api-aws tag-ml-api push-ml-api-aws
             aws ecs update-service --cluster ml-api --service custom-service --task-definition  first-run-task-definition --force-new-deployment           
 
