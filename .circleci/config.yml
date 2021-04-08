@@ -127,7 +127,7 @@ workflows:
                 - master
       - publish_docker_image_to_aws:
           requires:
-            - train_and_upload_regression_model
+            - train_and_upload_classification_model
           filters:
             branches:
               only:
