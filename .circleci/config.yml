@@ -14,7 +14,7 @@ prepare_venv: &prepare_venv
       pip install --upgrade pip
 
 jobs:
-  test_classification_model:
+  test_insurance_classifier_model:
     <<: *defaults
     steps:
       - checkout
@@ -35,7 +35,7 @@ jobs:
             . venv/bin/activate
             py.test -vv packages/classification_model/tests
 
-  test_ml_api:
+  test_flask_deploy_api:
     <<: *defaults
     steps:
       - checkout
@@ -56,7 +56,7 @@ jobs:
           paths:
             - "/venv"
 
-  train_and_upload_classification_model:
+  train_and_upload_insurance_classifier_model:
     <<: *defaults
     steps:
       - checkout
@@ -78,7 +78,7 @@ jobs:
             chmod +x ./scripts/publish_model.sh
             ./scripts/publish_model.sh ./packages/classification_model/
 
-  differential_tests:
+  insurance_classifier_differential_tests:
     <<: *defaults
     steps:
       - checkout
@@ -96,7 +96,7 @@ jobs:
             pip install -r packages/ml_api/requirements.txt
             py.test -vv packages/ml_api/tests -m differential
 
-  publish_docker_image_to_aws:
+  publish_docker_model_image_to_aws:
     <<: *defaults
     steps:
       - checkout
@@ -111,23 +111,23 @@ jobs:
 
 workflows:
   version: 2
-  test-all:
+  test-insurance-classifier-model:
     jobs:
-      - test_classification_model
-      - test_ml_api
-      - differential_tests
-      - train_and_upload_classification_model:
+      - test_insurance_classifier_model
+      - test_flask_deploy_api
+      - insurance_classifier_differential_tests
+      - train_and_upload_insurance_classifier_model:
           requires:
-            - test_classification_model
-            - test_ml_api
-            - differential_tests
+            - test_insurance_classifier_model
+            - test_flask_deploy_api
+            - insurance_classifier_differential_tests
           filters:
             branches:
               only:
                 - master
-      - publish_docker_image_to_aws:
+      - publish_docker_model_image_to_aws:
           requires:
-            - train_and_upload_classification_model
+            - train_and_upload_insurance_classifier_model
           filters:
             branches:
               only:
