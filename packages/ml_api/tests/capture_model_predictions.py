@@ -1,9 +1,7 @@
 import pandas as pd
-
 from classification_model.predict import make_prediction
 from classification_model.processing.data_management import load_dataset
 from classification_model.config import config
-
 from api import config as api_config
 
 def capture_predictions(*, save_file:str = 'test_data_predictions.csv')	:
